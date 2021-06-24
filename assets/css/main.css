@@ -1,0 +1,1040 @@
+.header {
+    height: var(--header-height);
+    background-image: linear-gradient(0, #fe6433, #f53e2d);
+}
+
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+    height: var(--navbar-height);
+}
+
+.header__navbar-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 4px 0 0 0;
+    margin-bottom: 0px !important;
+}
+
+.header__navbar-item {
+    position: relative;
+    margin: 0 8px;
+    min-height: 26px;
+    /* //de cho icon dung bi du ra  */
+}
+
+.header__navbar-item,
+.header__navbar-item-link {
+    display: inline-flex;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-weight: 300;
+    align-items: center;
+}
+
+.header__navbar-icon:hover,
+.header__navbar-item-link:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.header__navbar-item--thick {
+    font-weight: 400;
+}
+
+.header__navbar-item--separate::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 1px solid #FB9086;
+    height: 12px;
+    right: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header__navbar-item-hasqr:hover .header__qr {
+    display: block;
+}
+
+.header__navbar-icon {
+    font-size: 1.8rem;
+    color: var(--white-color);
+    padding: 0 4px;
+}
+
+.header__navbar-item--notcursor {
+    cursor: text;
+}
+
+/* QR header  */
+
+.header__qr {
+    background-color: var(--white-color);
+    width: 186px;
+    padding: 8px;
+    position: absolute;
+    top: 118%;
+    left: 0;
+    border-radius: 2px;
+    z-index: 1;
+    display: none;
+    animation: FadeIn ease 1s;
+}
+
+/* làm cầu nối */
+.header__qr::before {
+    position: absolute;
+    left: 0;
+    top: -16px;
+    width: 100%;
+    height: 20px;
+    content: "";
+    display: block;
+}
+
+.heaer__qr-img {
+    width: 100%;
+}
+
+.header__link {
+    display: flex;
+    /* //them display flex vao flex container  */
+    justify-content: space-between;
+}
+
+.header__download:nth-child(1) {
+    margin-left: 11px;
+}
+
+.header__download:nth-child(2) {
+    margin-right: 11px;
+}
+
+.header__download-img {
+    height: 16px;
+}
+
+/* notification */
+
+.header__navbar-item:hover .header__notify {
+    display: block;
+}
+
+.header__notify {
+    position: absolute;
+    /* do cha no co relative roi  */
+    top: 118%;
+    right: 0;
+    width: 404px;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 5px #999;
+    background-color: var(--white-color);
+    text-decoration: none;
+    transform-origin: calc(100% - 32px) top;
+    /* de cho no phong mui ten to dan chu khong phai tu phai sang trai  */
+    animation: headerNotifyGrow ease-in 0.25s;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+}
+
+
+/* before voi after van nam trong khoi ma no duoc goi,
+before thi nam dau do phia tren cung ben trai khoi
+after nguoc lai */
+/* luu y set chieu rong cao cua khoi neu khong no thua huong rat phuc tap  */
+
+.header__notify::before {
+    content: "";
+    border-color: transparent transparent white transparent;
+    border-width: 20px 28px;
+    border-style: solid;
+    position: absolute;
+    top: -30px;
+    right: 4px;
+}
+
+.header__notify::after {
+    content: "";
+    height: 20px;
+    width: 50%;
+    display: block;
+    color: red;
+    position: absolute;
+    top: -20px;
+    right: 0;
+}
+
+@keyframes headerNotifyGrow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.header__notify-list {
+    padding: 0;
+    background-color: rgba(238, 75, 43, 0.1);
+}
+
+.header__notify-item:hover {
+    background-color: #ccc;
+}
+
+.header__notify-header {
+    height: 40px;
+    color: #999;
+    font-size: 1.4rem;
+    font-weight: 400;
+    /* the p tu can giua  */
+    margin-left: 12px;
+}
+
+.header__notify-link {
+    display: flex;
+    text-decoration: none;
+    padding: 12px;
+}
+
+.header__notify-img {
+    width: 48px;
+    /* neu de width la % thi se bi loi, nua ranh xem lai */
+    /* neu khong xu ly bang khoi chua thi xu ly bang
+    object-fit: contain; */
+}
+
+.header__notify-infor {
+    margin-left: 12px;
+}
+
+.header__notify-name {
+    margin: 0;
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+}
+
+.header__notify-description {
+    margin: 0;
+    font-size: 12px;
+    color: #756F6E;
+    line-height: 1.6;
+}
+
+.header__notify-footer-btn {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 8px 0;
+    font-weight: 400;
+}
+
+/* header search  */
+.header__search {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.header__search-btn-on-mobile {
+    display: none;
+}
+
+#radio-for-history {
+    display: none;
+}
+
+
+
+.header___search-logo {
+    width: 200px;
+
+}
+
+.header__search-logo-img {
+    width: 148px;
+    fill: #fff;
+}
+
+.header__search-search {
+    flex: 1;
+    /* cho no chiem het chieu ngang con du lai  */
+    background-color: var(--white-color);
+    height: 40px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 20%);
+}
+
+.header__search-wrap {
+    height: 100%;
+    flex: 1;
+    position: relative;
+}
+
+.header__search-input {
+    /*de no tu chiem het phan con lai */
+    height: 100%;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    border-radius: 2px;
+    color: var(--text-color);
+    padding: 0 16px;
+    width: 100%;
+}
+
+.header__search-input:focus~.header__search-history {
+    display: block;
+}
+
+.header__search-history {
+    background-color: var(--white-color);
+    border-radius: 3px;
+    box-shadow: 0 1px 5px #999;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 2px);
+    width: calc(100% + 16px);
+    padding: 0;
+    overflow: hidden;
+    z-index: 1;
+    display: none;
+}
+
+.header__search-history-heading {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    opacity: 0.5;
+    padding-left: 16px;
+    margin: 8px 0;
+}
+
+.header__search-history-item {
+    list-style: none;
+    font-size: 1.4rem;
+    padding-left: 16px;
+    height: 36px;
+    font-weight: 500;
+    line-height: 36px;
+    cursor: pointer;
+}
+
+.header__search-history-item:hover {
+    background-color: #ccc;
+}
+
+.header__search-search-select {
+    padding: 0 16px;
+    position: relative;
+}
+
+.header__search-search-select:hover .header__search-option {
+    display: block;
+}
+
+.header__search-search-label {
+    border-left: 1px solid #ccc;
+    padding: 0 16px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.header__search-search-icon {
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+/* cau noi  */
+.header__search-option::after {
+    content: "";
+    /* background-color: red; */
+    height: 20px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: -20px;
+}
+
+.header__search-option {
+    /*ul*/
+    border-radius: 3px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 130px;
+    padding: 0;
+    font-size: 1.4rem;
+    box-shadow: 0 1px 2px #ccc;
+    background-color: var(--white-color);
+    z-index: 2;
+    display: none;
+}
+
+.header__search-option-item {
+    /*li*/
+    list-style: none;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.header__search-option-item:hover {
+    background-color: #ccc;
+}
+
+.header__search-option-item span {
+    padding: 0 8px;
+}
+
+.header__search-option-item i {
+    padding: 0 8px;
+    font-size: 1.2rem;
+}
+
+.header__search-btn {
+    height: 36px;
+    background-color: var(--primary);
+    width: 60px;
+    outline: none;
+    border: none;
+    margin-right: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.header__search-btn:hover {
+    opacity: 0.8;
+}
+
+.header__search-btn-icon {
+    font-size: 1.4rem;
+    color: var(--white-color);
+}
+
+/* end header search  */
+
+/* header cart  */
+.header__cart {
+    height: 100%;
+    width: 150px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* tranh line height vi no se anh huong may thang con  */
+}
+
+.header__cart-wrap {
+    display: inline-block;
+    padding: 8px;
+}
+
+.header__cart-icon {
+    font-size: 22px;
+    color: var(--white-color);
+}
+
+.header__cart-badge {
+    background-color: var(--white-color);
+    line-height: 1.4rem;
+    border-radius: 10px;
+    padding: 1px 7px;
+    border: 2px solid var(--primary);
+    font-size: 1.4rem;
+    color: var(--primary);
+    position: absolute;
+    top: 19px;
+    right: 44px;
+}
+
+.header__cart-wrap:hover .header__cart-list {
+    display: block;
+}
+
+.header__cart-list {
+    width: 400px;
+    background-color: var(--white-color);
+    position: absolute;
+    right: 46px;
+    top: calc(100% - 18px);
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    animation: FadeIn ease 1s;
+    z-index: 2;
+    display: none;
+}
+
+.header__cart-list--no-cart {
+    padding-top: 16px;
+}
+
+.header__cart-list::before {
+    content: "";
+    cursor: pointer;
+    border-color: transparent transparent white transparent;
+    border-width: 20px 28px;
+    border-style: solid;
+    position: absolute;
+    top: -28px;
+    right: 0px;
+}
+
+.header__cart-list--no-cart .header__cart-no-cart-img {
+    width: 50%;
+}
+
+.header__cart-list--no-cart .header__cart-list-no-cart-message {
+    font-size: 1.4rem;
+    height: 40px;
+    margin: 0;
+    line-height: 40px;
+    font-weight: 500;
+    position: relative;
+    top: -4px;
+}
+
+.header__cart-list--has-cart .header__cart-no-cart-img,
+.header__cart-list--has-cart .header__cart-list-no-cart-message {
+    display: none;
+}
+
+.header__cart-list--no-cart .header__cart-list--has-cart-heading,
+.header__cart-list--no-cart .header__cart-list--has-cart-list,
+.header__cart-list--no-cart .header__cart-btn-wrap {
+    display: none;
+}
+
+.header__cart-list--has-cart-heading {
+    padding: 10px;
+    color: var(--text-light-color);
+    font-size: 1.4rem;
+    text-align: left;
+    margin: 0;
+    line-height: 16px;
+}
+
+.header__cart-list--has-cart-list {
+    margin: 0;
+    padding: 4px;
+}
+
+.header__cart-list-item {
+    list-style: none;
+    display: flex;
+    padding: 10px;
+}
+
+.header__cart-list-item:hover {
+    background-color: #ccc;
+}
+
+.header__cart-item-img {
+    width: 42px;
+    height: 42px;
+    margin: 10px 5px;
+}
+
+.header__cart-item-info {
+    flex: 1;
+    margin-left: 5px;
+}
+
+.header__cart-item-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__cart-item-name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    max-height: 4rem;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    flex: 1;
+    line-height: 2rem;
+    text-align: left;
+}
+
+.header__cart-item-calc {
+    color: var(--text-light-color);
+}
+
+.header__cart-item-price {
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+.header__cart-item-multiple {
+    padding: 0 5px;
+}
+
+.header__cart-item-quantity {
+    color: var(--text-light-color);
+}
+
+.header__cart-item-body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.header__cart-item-description {
+    color: var(--text-light-color);
+}
+
+.header__cart-item-remove {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.header__cart-item-remove:hover {
+    background-color: #ccc;
+    color: var(--primary);
+}
+
+.header__cart--has-cart-btn {
+    border: none;
+}
+
+.header__cart-btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+/* end header cart  */
+
+/* content  */
+.content {
+    background-color: #F5F5F5;
+}
+
+.category {
+    background-color: var(--white-color);
+    border-radius: 3px;
+}
+
+.category__heading {
+    padding: 8px 10px 18px 16px;
+}
+
+.category__heading-name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding-left: 8px;
+    padding-top: 4px;
+    text-transform: uppercase;
+}
+
+.category__list {
+    margin: 0;
+    padding: 0 0 0 12px;
+}
+
+.category__list-item {
+    padding: 8px 10px 8px 12px;
+    list-style: none;
+    position: relative;
+}
+
+.category__list-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+    border: 1px #e7e7e7 solid;
+}
+
+.category__list-item-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #333;
+    position: relative;
+    transition: right linear 0.1s;
+    right: 0;
+}
+
+.category__list-item-link:hover {
+    color: var(--primary);
+    right: -4px;
+}
+
+.category__list-item--active .category__list-item-link {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.category__list-item--active .category__list-item-link::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(calc(-50% + 1px));
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--primary);
+}
+
+/* filter  */
+.filter {
+    background-color: rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    padding: 12px 22px;
+    border-radius: 3px;
+}
+
+.filter__btn-range {
+    display: flex;
+    align-items: center;
+}
+
+.filter__arrange {
+    color: #555;
+    font-size: 1.4rem;
+    margin-right: 12px;
+}
+
+.filter__btn {
+    min-width: 90px;
+    margin-right: 12px;
+    border: none;
+    background-color: var(--white-color);
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 2%);
+}
+
+
+.filter__page {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    /* cho no qua ben phai  */
+}
+
+.filter__page-num {
+    margin-right: 16px;
+    font-size: 1.2rem;
+}
+
+.filter__page-current {
+    color: var(--primary);
+
+}
+
+.filter__page-control {
+    display: flex;
+    height: 36px;
+    width: 73px;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+    overflow: hidden;
+}
+
+.filter__page-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: var(--white-color);
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.filter__page-btn:first-child {
+    border-right: 1px solid #eee;
+}
+
+.filter__page-btn--disabled {
+    background-color: #f9f9f9;
+    color: #ccc;
+    cursor: default;
+}
+
+/* product  */
+.product {
+    padding: 20px 0;
+}
+
+.grid-col-2-0f-10 {
+    margin-bottom: 20px;
+}
+
+.product-item {
+    background-color: var(--white-color);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+    position: relative;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    transition: transform ease-in 0.1s;
+    will-change: transform;
+    margin-bottom: 10px;
+}
+
+.product-item:hover {
+    box-shadow: 0 1px 20px 0 rgb(0 0 0 / 5%);
+    transform: translateY(-1px);
+}
+
+.product-item__img {
+    /* phai dat cai nay moi hien background-image:  */
+    padding-top: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product-item__content {
+    padding: 10px;
+}
+
+.product-item___name {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    line-height: 1.8rem;
+    height: 3.6rem;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-weight: 400;
+    margin: 0;
+}
+
+.product-item__price {
+    display: flex;
+    margin-top: 5px;
+    align-items: baseline;
+}
+
+.product-item__price-old {
+    font-size: 1.2rem;
+    color: #555;
+    text-decoration: line-through;
+    margin-right: 5px;
+}
+
+.product-item__price-current {
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.product-item__action {
+    display: flex;
+    margin-top: 5px;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.product-item-empty-heart-icon {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.product-item-full-heart-icon {
+    font-size: 1rem;
+    color: #f63d30;
+}
+
+
+.product-item__action-like .product-item-full-heart-icon {
+    display: none;
+}
+
+.product-item__action-like--active .product-item-full-heart-icon {
+    display: block;
+}
+
+.product-item__action-like--active .product-item-empty-heart-icon {
+    display: none;
+}
+
+.product-item__action-rating {
+    font-size: 1rem;
+    color: rgb(255, 206, 61);
+}
+
+.product-item__origin {
+    margin-top: 5px;
+    display: flex;
+}
+
+.product-item__origin-brand {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 300;
+}
+
+.product-item__origin-nation {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 300;
+    margin-left: auto;
+    /* thay vi space between de margin auto no tu troi ve ben kia  */
+
+}
+
+.product-item__favorite {
+    position: absolute;
+    left: -4px;
+    top: 10px;
+    color: var(--primary);
+    background-color: currentColor;
+}
+
+.product-item__favorite::before {
+    content: "";
+    border-top: currentColor 3px solid;
+    border-left: transparent 3px solid;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    filter: brightness(60%);
+    /* loc do sang  */
+}
+
+.product-item__favorite span {
+    font-size: 0.9rem;
+    color: var(--white-color);
+    font-weight: 500;
+    padding-left: 2px;
+    padding-right: 4px;
+}
+
+.product-item__favorite i {
+    color: var(--white-color);
+    font-size: 0.8rem;
+    padding-left: 4px;
+}
+
+.product-item__sale-off {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 38px;
+    height: 35px;
+    padding: 4px 2px 3px 3px;
+    text-align: center;
+    color: rgba(255, 216, 64, 0.95);
+    background-color: currentColor;
+}
+
+.product-item__sale-off::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-style: solid;
+    border-width: 0 19px 6px 19px;
+    border-color: transparent currentColor transparent currentColor;
+}
+
+.product-item__sale-off-percent {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ee4d2d;
+    line-height: 1.2rem;
+}
+
+.product-item__sale-off-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white-color);
+    line-height: 1.2rem;
+}
+
+
+/* footer  */
+.footer {
+    border-top: 4px var(--primary) solid;
+    padding: 25px 0 15px;
+}
+
+.mg-left-auto {
+    margin-left: auto !important;
+}
+
+.footer__heading {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__item {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.54);
+    margin-bottom: 12px;
+}
+
+.footer__item a,
+.footer__contact a {
+    text-decoration: none;
+}
+
+.footer__item a:hover {
+    color: var(--primary);
+}
+
+.footer__item-icon {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.footer__contact {
+    display: flex;
+}
+
+.footer__qr {
+    width: 86px;
+    height: 86px;
+    object-fit: contain;
+    /* khong biet cai nay lam gi  */
+}
+
+.footer__qr img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer__download {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer__CH-play img,
+.footer__appstore img {
+    height: 20px;
+}
+
+.footer__appstore,
+.footer__CH-play {
+    margin-left: 13px;
+}

@@ -1,0 +1,358 @@
+:root {
+    --white-color: #FFF;
+    --black-color: #000;
+    --text-color: #333;
+    --text-light-color: #a5a5a5;
+    --primary: #f53e2d;
+    --border-color: #bdbdbd;
+    --header-height : 120px;
+    --navbar-height : 40px;
+    --search-height : cacl(var(--header-height) - var(--navbar-height)); 
+}
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;    
+    /* mac dinh 100% la 16px nen de 62.5% la 10px nen 1 rem = 10px cho de tinh sau nay */
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    /* ket hop voi box-sizing o tren */
+}
+
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px 0 -12px;
+}
+
+.grid-col-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(16.6667%);
+}
+
+.grid-col-2-0f-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(20%);
+}
+.grid-col-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(83.3333%);
+}
+
+.pd-top-36 {
+    padding-top: 36px ;
+}
+
+.pd-bottom-36 {
+    padding-bottom: 36px;
+}
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1 ;
+    }
+}
+
+@keyframes Growth {
+    from {
+        transform: scale(--Growth-from);
+    }
+    to {
+        transform: scale(--Growth-to);
+    }
+}
+.btn {
+    min-width : 142px;
+    height : 32px;
+    font-size: 1.4rem;
+    border-color: var(--border-color);
+    cursor: pointer;
+    color : var(--text-color);
+    border-radius: 3px;padding: 0 8px;
+    display: inline-flex; /*inline flex cho ban than no len cung dong*/
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: var(--primary)!important;
+    color : var(--white-color);
+}
+.modal {
+    position : fixed;
+    top : 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* may cai nay de keo banh rong ra toan man hinh  */
+    /* co the dung right: 0 left: 0 de keo width ra toan man hinh doi voi cac doi tuong khac  */
+    /* flex ket hop voi margin auto va position relative can modal body ve giua man hinh  */
+    display: flex;
+    animation: FadeIn linear 0.1s;
+}
+
+.modal__overlay {
+    width: 100%;
+    height: 100%;
+    position : absolute;
+    /* phai dat position neu khong no xu ly nhu block thong thuong thi body chay len nam ngang overlay  */
+    /* dat vay cho no tach biet ve do cao de khong nam cung mat phang  */
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal__body {
+    position: relative;
+    /* luu y: khi sd position absolute thi no duoc giu co dinh, margin auto va chi de flex ma khong justify hay align thi no khong anh huong toi  */
+    width: 400px;
+    margin: auto;
+     /* set position de no noi len tren vi no nam sau */
+    /* margin auto de can giua theo truc ngang man hinh  */
+    --Growth-from : 0.7;
+    --Growth-to : 1;
+    animation: Growth linear 0.1s;
+}
+
+/* display flex + position relative + margin auto = display flex + justify center + align center   */
+.modal__inner {
+    width : 400px;
+    background-color: var(--white-color);
+}
+
+/* authen modal  */
+.authen-form__container {
+    padding : 0 32px;
+}
+
+.authen-form__header {
+    display: flex;
+    justify-content: space-between;
+    padding : 32px 0;
+    align-items: center;
+}
+
+.authen-form__register {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.authen-form__login {
+    font-size : 1.6rem;
+    font-weight: 400;
+    color : var(--primary)
+}
+
+.authen-form__group {
+    margin-top: 16px;
+}
+
+.authen-form__input {
+    height: 40px;
+    width: 100%;
+    padding-left : 8px;
+    font-size: 1.4rem;
+    border : #bdbdbd solid 1px;
+    border-radius: 2px;
+    outline-color: #777;
+    cursor: text;
+}
+
+.authen-form__policy {
+    margin-top: 16px;
+}
+
+.authen-form__policy-text {
+    padding: 0 8px;
+    text-align: center;
+    margin: 0;
+}
+
+.authen-form__policy-text a {
+    text-decoration: none;
+    color : var(--primary);
+}
+
+/* help in login  */
+
+.authen-form__help {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 0;
+}
+
+.authen-form__help-forget {
+    text-decoration: none;
+    color: var(--primary); 
+}
+
+.authen-form__help-need-help {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.authen-form__help-separate {
+    height : 1.4rem;
+    border-left: solid #aeaeae 1px;
+    margin: 0 16px; 
+}
+/* end help  */
+
+
+.authen-form__control {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 50px;
+}
+
+.authen-form__contact {
+    background-color: #F5F5F5;
+    padding: 24px 36px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.authen-form__social {
+    text-decoration: none;
+    line-height: 32px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.authen-form__social span {
+    padding: 0 20px;
+}
+
+.authen-form__social .fab {
+    font-size: 14px;
+}
+
+.authen-form__contact-facebook {
+    background-color: #3a5a98;
+    color: var(--white-color);  
+}
+
+.authen-form__contact-google {
+    background-color: var(--white-color);
+}
+
+/* end authen modal  */
+
+/* selection  */
+.select-input {
+    min-width: 200px;
+    padding: 0 12px;
+    height: 34px;
+    display: flex;
+    background-color: var(--white-color);
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 2px;
+    position: relative;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__label {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.select-input__icon {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.select-input__list {
+    border-radius: 2px;
+    position: absolute;
+    background-color: var(--white-color);
+    top: 35px;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.select-input__item {
+    list-style: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding: 12px 12px;
+}
+
+.select-input__item-link {
+    color: var(--text-color);
+    text-decoration: none;
+
+}
+.select-input__item-link:hover {
+    color: var(--primary);
+}
+
+/* pagination  */
+.pagination {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0 0 46px 0;
+    width: 100%;
+}
+
+.pagination__item {
+    list-style: none;
+    height: 30px;
+    width: 40px;
+    background-color: #f7f7f7;
+    /* margin: 0 15px; */
+
+}
+
+.pagination__item-link {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-light-color);
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination__item--active {
+    background-color: var(--primary);
+}
+
+.pagination__item--active .pagination__item-link {
+    color : var(--white-color);
+}
+
+.pagination__item--active:hover {
+    opacity: 0.7;
+}

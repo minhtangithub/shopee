@@ -1,0 +1,124 @@
+/* mobile and tablet  */
+@media (max-width: 1023px) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+
+    .header {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .content {
+        padding-top: 50px;
+    }
+}
+
+/* tablet  */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+
+    .header__cart-badge {
+        right: 0;
+        transform: translateX(-70%);
+    }
+
+    .header__cart {
+        width: 100px;
+    }
+
+    :root {
+        --header-height: 70px;
+        --navbar-height: 0;
+        --search-height: cacl(var(--header-height) - var(--navbar-height));
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+    }
+
+    .header__cart-list {
+        width: 100vw;
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: calc(7%);
+        z-index: 2;
+        /* display: none; */
+    }
+
+    .header__cart-list::before {
+        display: none;
+    }
+
+
+}
+
+/* mobile  */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .header {
+        height: unset;
+    }
+
+    .header___search-logo {
+        width: unset;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header__search-search {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 75px;
+        z-index: 3;
+        padding: 0 3%;
+        width: 100vw;
+        display: none;
+    }
+
+    #radio-for-history:checked ~ .header__search-search {
+        display: flex;
+    }
+
+
+    .header__search-history {
+        width: 100vw;
+        position: fixed;
+        left: 0;
+        top: unset;
+    }
+
+    .header__search-btn-on-mobile {
+        display: flex;
+        height: 100%;
+        padding: 20px;
+        font-size: 2.4rem;
+        align-items: center;
+        justify-content: flex-start;
+        color: var(--white-color);
+    }
+
+    .header__cart {
+        width: unset;
+        padding: 20px;
+    }
+
+    .header__cart-badge {
+        right: 10px;
+    }
+
+    .pagination__item-link {
+        font-size: 1.4rem;
+    }
+}
