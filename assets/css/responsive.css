@@ -13,6 +13,53 @@
     .content {
         padding-top: 50px;
     }
+
+    .mobile-tablet-catetory {
+        display: flex;
+        overflow-y: auto; 
+        margin-top: 10px;
+        /* de du thi no keo qua keo lai  */
+    }
+
+    .mobile-tablet-catetory::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mobile-tablet-catetory-item {
+        flex-shrink: 0;
+        margin-right: 10px;
+        border-radius: 4px;
+    }
+
+    .mobile-tablet-catetory-item:nth-of-type(3n + 1){
+        background-color: #87AFD8;
+    }
+
+    .mobile-tablet-catetory-item:nth-of-type(3n + 2){
+        background-color: #76C9BD;
+    }
+
+    .mobile-tablet-catetory-item:nth-of-type(3n + 3){
+        background-color: #88CF81;
+    }
+
+    .mobile-tablet-catetory-link {
+        text-decoration: none;
+        color: var(--white-color);
+        font-weight: 300;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        text-align: center;
+        width: 108px;
+        height: 40px;
+        display: block;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        user-select: none;
+        -webkit-user-select: none;
+        /* de khong bi select chu khi bam  */
+    }
 }
 
 /* tablet  */
@@ -48,7 +95,6 @@
         left: 0;
         top: calc(7%);
         z-index: 2;
-        /* display: none; */
     }
 
     .header__cart-list::before {
@@ -113,6 +159,20 @@
         width: unset;
         padding: 20px;
     }
+
+    .header__cart-list {
+        width: 100vw;
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: calc(10% + 15px);
+        z-index: 2;
+    }
+
+    .header__cart-list::before {
+        display: none;
+    }
+
 
     .header__cart-badge {
         right: 10px;
